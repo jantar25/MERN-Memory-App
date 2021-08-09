@@ -22,14 +22,17 @@ const Form = ({currentId,setCurrentId}) => {
         } else{
             dispatch(createPost(postData));
         }
-        
+        clear()
     }
-    const clear=()=>{}
+    const clear=()=>{
+        setCurrentId(null)
+        setPostData({creator:'', title:'',message:'',tags:'',selectedFile:''})
+    }
     return (
         <div>
             <Paper className={classes.paper}>
                 <form autoComplete="off" noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
-                    <Typography variant="h6">CREATE MEMORY</Typography>
+                    <Typography variant="h6">{currentId? 'EDIT': 'CREATE'} MEMORY</Typography>
                     <TextField 
                     name="creator" variant="outlined" 
                     label="Creator" fullWidth 
