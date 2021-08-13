@@ -3,7 +3,7 @@ import {Container,AppBar,Typography,Grow,Grid} from "@material-ui/core"
 import { useDispatch } from 'react-redux'
 import { getPosts } from "./actions/posts"
 import memories from "../src/images/memories.jpg"
-import Posts from "./components/Posts/post/Post"
+import Posts from "./components/Posts/Posts";
 import Form from './components/form/Form.js'
 import useStyle from "./style.js"
 
@@ -12,7 +12,7 @@ const App = () => {
     const classes=useStyle();
     const dispatch=useDispatch();
     useEffect(() => { dispatch(getPosts());
-    }, [currentId,dispatch])
+    }, [currentId,dispatch]);
     return (
         <Container maxidth="lg">
             <AppBar className={classes.appBar} position="static" color="inherit">
