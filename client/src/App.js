@@ -11,8 +11,10 @@ const App = () => {
     const [currentId,setCurrentId]=useState(null);
     const classes=useStyle();
     const dispatch=useDispatch();
-    useEffect(() => { dispatch(getPosts());
-    }, [currentId,dispatch]);
+
+    useEffect(() => {
+        dispatch(getPosts());
+      }, [currentId, dispatch]);
     return (
         <Container maxidth="lg">
             <AppBar className={classes.appBar} position="static" color="inherit">
