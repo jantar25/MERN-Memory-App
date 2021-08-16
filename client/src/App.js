@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react'
-import {Container,AppBar,Typography,Grow,Grid} from "@material-ui/core"
+import {Container,AppBar,Typography,Grow,Grid,Toolbar} from "@material-ui/core"
 import { useDispatch } from 'react-redux'
 import { getPosts } from "./actions/posts"
 import memories from "../src/images/memories.png"
@@ -18,12 +18,12 @@ const App = () => {
     return (
         <Container maxidth="lg">
             <AppBar className={classes.appBar} position="static">
-                <Typography className={classes.heading} variant="h3" align="center">OUR MEMORIES</Typography>
+                <Typography className={classes.heading} align="center">OUR MEMORIES</Typography>
                 <img className={classes.image} src={memories} alt={memories} height="70" />
             </AppBar>
             <Grow in>
                 <Container>
-                    <Grid  container justifyContent="space-between" alignItems="stretch" spacing={3}>
+                    <Grid  className={classes.mainContainer} container justifyContent="space-between" alignItems="stretch" spacing={3}>
                         <Grid item xs={12} sm={7}>
                             <Posts setCurrentId={setCurrentId} />
                         </Grid>
@@ -33,6 +33,13 @@ const App = () => {
                     </Grid>
                 </Container>
             </Grow>
+            <Toolbar  className={classes.toolBar} position="static" >
+            <Container>
+              <Typography  variant="body2" align="center" >
+                © 2021 Glo'B Jantar
+              </Typography>
+              </Container>
+            </Toolbar>
 
         </Container>
     )
@@ -40,5 +47,3 @@ const App = () => {
 
 export default App
 
-// direction="column-reverse" 
-// className={classes.mainContainer}

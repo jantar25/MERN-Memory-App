@@ -21,7 +21,7 @@ const Post = ({post,setCurrentId}) => {
                 <Typography variant="body2">{moment(post.createdAt).fromNow()}</Typography>
             </div>
             <div className={classes.overlay2}>
-                <Button style={{color:'Black'}} size='small' onClick={()=>setCurrentId(post._id)}>
+                <Button style={{color:'White'}} size='small' onClick={()=>setCurrentId(post._id)}>
                     <MoreHorizIcon fontSize='medium' />
                 </Button>
             </div>
@@ -35,7 +35,7 @@ const Post = ({post,setCurrentId}) => {
             </CardContent>
             <CardActions className={classes.cardActions}>
                 <Button size='small' onClick={()=>{dispatch(likePost(post._id))}}>
-                    <ThumbUpAltIcon fontSize='small' />&nbsp; Like &nbsp; {post.likeCount}
+                    <ThumbUpAltIcon fontSize='small' />&nbsp;{post.likeCount}&nbsp;Like 
                 </Button>
                 <Button size='small' onClick={()=>{ dispatch(deletePost(post._id))}}>
                     <DeleteIcon fontSize='small' />Delete
