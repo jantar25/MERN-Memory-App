@@ -8,9 +8,11 @@ export default makeStyles((theme)=>({
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
+        background:'rgb(128,128,128)',
       },
       heading: {
-        color: 'rgba(0,183,255, 1)',
+        color: 'rgb(0,0,0)',
+        
       },
       image: {
         marginLeft: '15px',

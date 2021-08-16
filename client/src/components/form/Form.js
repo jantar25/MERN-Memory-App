@@ -34,7 +34,7 @@ const Form = ({currentId,setCurrentId}) => {
                 <form autoComplete="off" noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
                     <Typography variant="h6">{currentId? 'EDIT': 'CREATE'} MEMORY</Typography>
                     <TextField 
-                    name="creator" variant="outlined" 
+                    name="creator" variant="outlined"
                     label="Creator" fullWidth 
                     value={postData.creator} 
                     onChange={(e)=>setPostData({...postData,creator: e.target.value})} />
@@ -61,8 +61,8 @@ const Form = ({currentId,setCurrentId}) => {
                         />
                     </div>
                     <Button className={classes.buttonSubmit} variant="contained" 
-                        color="primary" size="large" type="submit" fullWidth>Submit</Button>
-                    <Button variant="contained" color="secondary" size="small" 
+                         size="large" type="submit" fullWidth>Submit</Button>
+                    <Button className={classes.buttonClear} variant="contained"  size="small" 
                     onClick={clear} fullWidth>Clear</Button>
                 </form>
             </Paper>
