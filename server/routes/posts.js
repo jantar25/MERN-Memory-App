@@ -13,6 +13,6 @@ export default router;
 
 
 
-// router.get('/:id', getPost);
+
 
 

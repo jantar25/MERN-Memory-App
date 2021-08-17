@@ -55,22 +55,3 @@ export const likePost = async (req, res) => {
 
 
 
-//  import express from 'express';
-
-// const router = express.Router();
-
-
-// export const getPost = async (req, res) => { 
-//     const { id } = req.params;
-
-//     try {
-//         const post = await PostMessage.findById(id);
-        
-//         res.status(200).json(post);
-//     } catch (error) {
-//         res.status(404).json({ message: error.message });
-//     }
-// }
-
-
-// export default router;
