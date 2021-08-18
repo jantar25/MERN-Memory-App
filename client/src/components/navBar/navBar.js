@@ -15,15 +15,15 @@ const navBar = () => {
                 <img className={classes.image} src={memories} alt={memories} height="50" />
             </div>
             <Toolbar className={classes.toolBar}>
-                {/* {user ? (
+                {user ? (
                     <div className={classes.profile}>
                         <Avatar className={classes.purple} alt={user.result.name} src={user.result.imageUrl}>{user.result.name.charAt(0)}</Avatar>
                         <Typography className={classes.userName} varient="h6">{user.result.name}</Typography>
-                        <Button varient="contained" className={classes.logout} color='secondary' onClick={}>LOG OUT</Button>
+                        <Button varient="contained" className={classes.logout} color='secondary'>LOG OUT</Button>
                     </div>
                 ) : (
-                    <Button component={Link} to='/auth' varient="contained" color='primary'>SIGN IN</Button>
-                )} */}
+                    <Button component={Link} to='/auth' className={classes.signIn} varient="contained" >SIGN IN</Button>
+                )}
             </Toolbar>
         </AppBar>
     )

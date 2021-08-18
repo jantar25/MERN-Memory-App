@@ -32,6 +32,13 @@ export default makeStyles((theme) => ({
     justifyContent: 'space-between',
     width: '400px',
   },
+  signIn:{
+    fontWeight:'bold',
+    color:'Black',
+    padding:'10px 30px',
+    borderRadius:'15px',
+    background:'rgb(110,110,110)',
+  },
   userName: {
     display: 'flex',
     alignItems: 'center',

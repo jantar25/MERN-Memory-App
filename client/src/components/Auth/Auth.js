@@ -1,11 +1,57 @@
-import React from 'react'
+import React,{useState} from 'react'
+import LockOutlinedIcon from "@material-ui/icons/LockOutlined" 
+import {Avatar,Button,Paper,Container,Typography,Grid, TextField} from "@material-ui/core"
+import useStyle from "./style.js";
+import Input from './Input.js';
 
 const Auth = () => {
     const state=null;
+    const [isSignup,setIsSignup]=useState(false);
+    const [showPassword,setShowPassword]=useState(false);
+    const handleShowPassword=()=>setShowPassword((prevShowPassword)=>!prevShowPassword)
+    const handleSubmit=()=>{
+
+    };
+    const handleChange=()=>{
+
+    };
+    const switchMode=()=>{
+        setIsSignup((prevIsSignup)=>!prevIsSignup)
+        handleShowPassword(false)
+    }
+    const classes=useStyle();
     return (
-        <div>
-            Auth
-        </div>
+        <Container component='main' maxWidth='xs'>
+            <Paper className={classes.paper} elevation={3}>
+                <Avatar className={classes.avatar}>
+                    <LockOutlinedIcon />
+                </Avatar>
+                <Typography variant='h5'>{isSignup ? 'SIGN UP' : 'SIGN IN'}</Typography>
+                <form className={classes.form} onSubmit={handleSubmit}>
+                    <Grid container spacing={2}>
+                        {
+                            isSignup && (
+                                <>
+                                <Input name='firstName' label='First Name' handleChange={handleChange} autoFocus half />
+                                <Input name='lastName' label='Last Name' handleChange={handleChange} half />
+                                </>
+                            )
+                        }
+                        <Input name='email' label='Email Address' handleChange={handleChange} type='Email' />
+                        <Input name='password' label='Password' handleChange={handleChange} type={showPassword ? 'text' : 'password'} handleShowPassword={handleShowPassword} />
+                        {
+                            isSignup && (<Input name='confirmPassword' label='Confirm Password' handleChange={handleChange} type='password' /> )
+                        }   
+                    </Grid>
+                    <Button type='submit' fullWidth variant='contained' className={classes.submit}>{isSignup ? 'SIGN UP' : 'SIGN IN' }</Button>
+                    <Grid container justify='flex-end'>
+                        <Grid item>
+                            <Button onClick={switchMode}>{isSignup ? 'Do you have already an account? Sign In' : "Don't you have an account? Sign up "}</Button>
+                        </Grid>
+                    </Grid>
+                </form>
+            </Paper>
+        </Container>
     )
 }
 
