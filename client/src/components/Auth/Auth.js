@@ -2,6 +2,8 @@ import React,{useState} from 'react'
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined" 
 import {Avatar,Button,Paper,Container,Typography,Grid} from "@material-ui/core"
 import { GoogleLogin } from 'react-google-login';
+import {useDispatch} from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import useStyle from "./style.js";
 import Input from './Input.js';
 import Icon from './icon.js';
@@ -11,6 +13,8 @@ const Auth = () => {
     const [isSignup,setIsSignup]=useState(false);
     const [showPassword,setShowPassword]=useState(false);
     const handleShowPassword=()=>setShowPassword((prevShowPassword)=>!prevShowPassword)
+    const dispatch = useDispatch();
+    const history= useHistory();
     const handleSubmit=()=>{
 
     };
@@ -22,7 +26,14 @@ const Auth = () => {
         handleShowPassword(false)
     }
     const googleSuccess= async(res)=>{
-        console.log(res)
+        const result=res?.profileObj;
+        const token=res?.tokenId;
+        try {
+            dispatch({type:'AUTH',data:{result,token}});
+            history.push('/');
+        } catch (error) {
+            console.log(error);
+        }
     };
     const googleFailure=(error)=>{
         console.log(error);
@@ -61,9 +72,10 @@ const Auth = () => {
                         onClick={renderProps.onClick} 
                         disabled={renderProps.disabled} 
                         startIcon={<Icon />} 
-                        variant='contained' >Google Sign In</Button>
+                        variant='contained' >
+                            Google Sign In
+                            </Button>
                     )}
-                   
                     onSuccess={googleSuccess}
                     onFailure={googleFailure}
                     cookiePolicy="single_host_origin"
