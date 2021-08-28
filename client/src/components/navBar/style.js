@@ -30,9 +30,17 @@ export default makeStyles((theme) => ({
   profile: {
     display: 'flex',
     justifyContent: 'space-between',
-    width: '400px',
+    width: '300px',
+    
   },
   signIn:{
+    fontWeight:'bold',
+    color:'Black',
+    padding:'10px 30px',
+    borderRadius:'15px',
+    background:'rgb(110,110,110)',
+  },
+  logout:{
     fontWeight:'bold',
     color:'Black',
     padding:'10px 30px',
@@ -42,6 +50,7 @@ export default makeStyles((theme) => ({
   userName: {
     display: 'flex',
     alignItems: 'center',
+    color:'rgb(0,0,0)',
   },
   brandContainer: {
     display: 'flex',
