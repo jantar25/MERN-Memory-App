@@ -7,7 +7,7 @@ import memories from '../../images/memories.png';
 import UseStyle from "./style.js";
 
 
-const navBar = () => {
+const NavBar = () => {
     const classes=UseStyle();
     const dispatch=useDispatch();
     const history= useHistory();
@@ -47,4 +47,4 @@ const navBar = () => {
     )
 }
 
-export default navBar;
+export default NavBar;

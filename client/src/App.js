@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter,Switch,Route } from 'react-router-dom'
 import {Container,Typography,Toolbar} from "@material-ui/core"
-import NavBar from './components/navBar/navBar'
+import NavBar from './components/navBar/NavBar'
 import useStyle from "./style.js"
 import Home from './components/Home/Home'
 import Auth from './components/Auth/Auth'
