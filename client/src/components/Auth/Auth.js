@@ -12,7 +12,7 @@ import {signin,signup} from '../../actions/auth'
 const initialState={firstName:'',lastName:'',email:'',password:'',confirmPassword:''}
 
 const Auth = () => {
-    const state=null;
+    const classes=useStyle();
     const [isSignup,setIsSignup]=useState(false);
     const [showPassword,setShowPassword]=useState(false);
     const [formData,setFormData]=useState(initialState);
@@ -48,7 +48,7 @@ const Auth = () => {
         console.log(error);
         console.log('Google Sign In Failed,Please try again later')
     };
-    const classes=useStyle();
+    
     return (
         <Container component='main' maxWidth='xs'>
             <Paper className={classes.paper} elevation={3}>
