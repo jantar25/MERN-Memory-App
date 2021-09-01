@@ -7,7 +7,7 @@ export default makeStyles((theme)=>({
       toolBar:{
         background:'rgb(128,128,128)',
         padding:'10px',
-        margin:'200px 10px 0px',
+        margin:'30px 10px 0px',
         borderRadius: 15,
         
       },
