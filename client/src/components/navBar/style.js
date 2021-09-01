@@ -1,24 +1,20 @@
 import { makeStyles } from '@material-ui/core/styles';
-import { deepPurple } from '@material-ui/core/colors';
+
 
 export default makeStyles((theme) => ({
   appBar: {
     borderBottomRightRadius: 30,
     borderTopLeftRadius:30,
     margin: '30px 0',
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
     padding: '10px 50px',
     background:'rgb(128,128,128)',
   },
-  heading: {
-    color: 'rgb(0,0,0)',
-    fontSize:"40px",
-    fontWeight:'bold',
-    textDecoration:'none',
+  container:{
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
+  
   image: {
     marginLeft: '10px',
   },
@@ -32,6 +28,12 @@ export default makeStyles((theme) => ({
     justifyContent: 'space-between',
     width: '300px',
     
+  },
+  heading: {
+    color: 'rgb(0,0,0)',
+    fontSize:"40px",
+    fontWeight:'bold',
+    textDecoration:'none',
   },
   signIn:{
     fontWeight:'bold',
@@ -57,12 +59,24 @@ export default makeStyles((theme) => ({
     alignItems: 'center',
   },
   purple: {
-    color: theme.palette.getContrastText(deepPurple[500]),
-    backgroundColor: deepPurple[500],
+    color: theme.palette.getContrastText('rgb(0,0,0)'),
+    backgroundColor: 'black',
+  },
+  [theme.breakpoints.down("sm")]:{
+    appBar: {
+      padding: '10px',  
+    },
+    heading: {
+      display:'none',
+    },
+    
   },
   [theme.breakpoints.down("xs")]:{
-    heading:{
-      fontSize:"25px",
-    }
-  }
+    userName: {
+      display:'none',
+    },
+    profile: {
+      width: '200px', 
+    },
+  },
 }));

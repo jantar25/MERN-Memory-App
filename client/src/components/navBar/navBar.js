@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from 'react';
 import {Link} from 'react-router-dom'
-import {AppBar,Avatar,Button,Typography,Toolbar} from "@material-ui/core";
+import {AppBar,Container,Avatar,Button,Typography,Toolbar} from "@material-ui/core";
 import { useDispatch } from 'react-redux';
 import { useHistory,useLocation } from 'react-router-dom';
 import decode from 'jwt-decode'
@@ -14,7 +14,7 @@ const NavBar = () => {
     const history= useHistory();
     const location= useLocation();
     const [user,setUser]=useState(JSON.parse(localStorage.getItem('profile')));
-    console.log(user);
+    console.log({'user: ': user});
     const logout=()=>{
         dispatch({type: 'LOGOUT'});
         history.push('/');
@@ -32,10 +32,12 @@ const NavBar = () => {
     },[location])
     return (
         <AppBar className={classes.appBar} position="static">
+            <Container className={classes.container}>
             <div className={classes.brandContainer}>
                 <Typography component={Link} to='/' className={classes.heading} align="center">OUR MEMORIES</Typography>
                 <img className={classes.image} src={memories} alt={memories} height="50" />
             </div>
+            
             <Toolbar className={classes.toolBar}>
                 {user ? (
                     <div className={classes.profile}>
@@ -47,6 +49,7 @@ const NavBar = () => {
                     <Button component={Link} to='/auth' className={classes.signIn} varient="contained" >SIGN IN</Button>
                 )}
             </Toolbar>
+            </Container>
         </AppBar>
     )
 }

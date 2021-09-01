@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter,Switch,Route } from 'react-router-dom'
 import {Container,Typography,Toolbar} from "@material-ui/core"
-import NavBar from './components/navBar/NavBar'
+import NavBar from './components/navBar/navBar'
 import useStyle from "./style.js"
 import Home from './components/Home/Home'
 import Auth from './components/Auth/Auth'
@@ -16,7 +16,7 @@ const App = () => {
                     <Route path='/' exact component={Home} />
                     <Route path='/Auth' exact component={Auth} />
                 </Switch>
-                <Toolbar className={classes.toolBar} position="static" >
+                <Toolbar className={classes.toolBar} >
                 <Container>
                 <Typography  variant="body2" align="center" >
                     © 2021 Glo'B Jantar
