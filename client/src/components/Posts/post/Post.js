@@ -26,12 +26,12 @@ const Likes=()=>{
         <Card className={classes.card}>
             <CardMedia className={classes.media} image={post.selectedFile} title={post.title} />
             <div className={classes.overlay}>
-                <Typography variant="h5">{post.name}</Typography>
-                <Typography variant="body2">{moment(post.createdAt).fromNow()}</Typography>
+                <Typography  variant="h5">{post.name}</Typography>
+                <Typography style={{color:'red'}} variant="body2">{moment(post.createdAt).fromNow()}</Typography>
             </div>
             {(user?.result.googleId === post?.creator || user?.result._id === post?.creator) && (
             <div className={classes.overlay2}>
-                <Button style={{color:'White'}} size='small' onClick={()=>setCurrentId(post._id)}>
+                <Button style={{color:'white'}} size='small' onClick={()=>setCurrentId(post._id)}>
                     <MoreHorizIcon fontSize='medium' />
                 </Button>
             </div>

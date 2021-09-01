@@ -23,15 +23,15 @@ export default makeStyles({
   },
   overlay: {
     position: 'absolute',
-    top: '20px',
-    left: '20px',
-    color: 'Black',
+    top: '50px',
+    left: '30px',
+    color:'rgb(110,110,110)',
   },
   overlay2: {
     position: 'absolute',
-    top: '20px',
+    top: '50px',
     right: '20px',
-    color: 'Black',
+    
   },
   grid: {
     display: 'flex',
