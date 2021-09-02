@@ -16,7 +16,7 @@ const App = () => {
                     <Route path='/' exact component={Home} />
                     <Route path='/Auth' exact component={Auth} />
                 </Switch>
-                <Toolbar className={classes.toolBar} >
+                <Toolbar className={classes.toolBar} position="static" >
                 <Container>
                 <Typography  variant="body2" align="center" >
                     © 2021 Glo'B Jantar
