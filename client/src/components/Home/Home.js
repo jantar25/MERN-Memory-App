@@ -2,7 +2,7 @@ import React from 'react'
 import {useState,useEffect} from 'react'
 import {Container,Grow,Grid,Paper,AppBar,TextField,Button} from "@material-ui/core"
 import { useDispatch } from 'react-redux'
-import { getPosts } from "../../actions/posts"
+import { getPosts,getPostsBySearch } from "../../actions/posts"
 import { useHistory,useLocation } from 'react-router-dom'
 import ChipInput from 'material-ui-chip-input'
 import useStyle from "./style.js"
@@ -32,7 +32,7 @@ const Home = () => {
 
     const searchPost=()=>{
         if(search.trim()){
-            //Fetch search pOST
+           dispatch(getPostsBySearch({search, tags: tags.join(',')}))
         } else {
             history.push('/')
         }
