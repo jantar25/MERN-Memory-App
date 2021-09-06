@@ -23,7 +23,7 @@ const Likes=()=>{
     return <><ThumbUpAltIcon fontSize='small' />&nbsp;Like</>
 }
     return (
-        <Card className={classes.card} raised elevation={10}>
+        <Card className={classes.card} raised elevation={6}>
             <CardMedia className={classes.media} image={post.selectedFile} title={post.title} />
             <div className={classes.overlay}>
                 <Typography  variant="h5">{post.name}</Typography>
