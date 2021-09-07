@@ -8,14 +8,14 @@ import {getPosts} from '../actions/posts'
 
 
 
-const Paginate=(page)=>{
+const Paginate=({page})=>{
     const {numberOfPages}=useSelector((state)=>state.posts)
     const classes=useStyles();
     const dispatch = useDispatch();
 
     useEffect(()=>{
-        if (page) dispatch(getPosts())
-    },[page])
+        if (page) dispatch(getPosts(page))
+    }, [page]);
     return (
         <Pagination 
         classes={{ul:classes.ul}}
