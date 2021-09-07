@@ -6,11 +6,19 @@ export default makeStyles((theme)=>({
     marginBottom: '1rem',
     display: 'flex',
     padding: '16px',
+    background:'rgb(128,128,128)',
+  },
+  textFieldSearch:{
+    padding: '5px',
   },
   pagination: {
     borderRadius: 4,
     marginTop: '1rem',
     padding: '16px',
+  },
+  searchButton:{
+    background:'#000000',
+    color:'#808080',
   },
       [theme.breakpoints.down("xs")]:{
         gridContainer: {
