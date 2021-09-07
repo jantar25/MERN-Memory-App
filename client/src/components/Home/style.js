@@ -8,13 +8,11 @@ export default makeStyles((theme)=>({
     padding: '16px',
     background:'rgb(128,128,128)',
   },
-  textFieldSearch:{
-    padding: '5px',
-  },
   pagination: {
     borderRadius: 4,
     marginTop: '1rem',
-    padding: '16px',
+    padding: '8px',
+    background:'#000000',
   },
   searchButton:{
     background:'#000000',
