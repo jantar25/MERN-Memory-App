@@ -31,7 +31,7 @@ const openPost=()=> history.push(`/posts/${post._id}`);
             <ButtonBase className={classes.cardAction} onClick={openPost}>
             <CardMedia className={classes.media} image={post.selectedFile} title={post.title} />
             <div className={classes.overlay}>
-                <Typography  variant="h5">{post.name}</Typography>
+                <Typography color='primary' variant="h5">{post.name}</Typography>
                 <Typography style={{color:'red'}} variant="body2">{moment(post.createdAt).fromNow()}</Typography>
             </div>
             {(user?.result.googleId === post?.creator || user?.result._id === post?.creator) && (
