@@ -54,18 +54,18 @@ const PostDetails = () => {
           <img className={classes.media} src={post.selectedFile || 'https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png'} alt={post.title} />
         </div>
       </div>
-     {recommendedPosts.lenght && (
+     {recommendedPosts.length && (
        <div className={classes.section} >
-          <Typography gutterBottom style={{color:'blue'}} variant="h5" >You Might also like:</Typography>
+          <Typography gutterBottom style={{color:'white'}} variant="h5" >You Might also like:</Typography>
           <Divider />
           <div className={classes.recommendedPosts}>
-            {recommendedPosts.map(({title,message,name,likes,selectedFiles,_id})=>(
+            {recommendedPosts.map(({title,message,name,likes,selectedFile,_id})=>(
               <div style={{margin:'20px', cursor:'pointer',}} onClick={()=>openPost(_id)} key={_id}>
-                 <Typography gutterBottom variant="h6" >{title}</Typography>
-                 <Typography gutterBottom variant="h5" >{name}</Typography>
-                 <Typography gutterBottom variant="subtitle2" >{message}</Typography>
-                 <Typography gutterBottom variant="subtitle1" >Likes:{likes.lenght}</Typography>
-                 <img src={selectedFiles} width='200px' />
+                 <Typography gutterBottom color="primary"  variant="h6" >{title}</Typography>
+                 <Typography gutterBottom color="secondary" variant="h5" >{name}</Typography>
+                 <Typography gutterBottom style={{color:'#808080'}} variant="subtitle2" >{message}</Typography>
+                 <Typography gutterBottom style={{color:'#808080'}} variant="subtitle1" >Likes:{likes.length}</Typography>
+                 <img src={selectedFile} width='200px' />
               </div>
             ))}
           </div>
