@@ -34,6 +34,7 @@ const openPost=()=> history.push(`/posts/${post._id}`);
                 <Typography style={{color:'white'}} variant="h5">{post.name}</Typography>
                 <Typography style={{color:'red'}} variant="body2">{moment(post.createdAt).fromNow()}</Typography>
             </div>
+            </div>
             {(user?.result.googleId === post?.creator || user?.result._id === post?.creator) && (
             <div className={classes.overlay2}>
                 <Button style={{color:'white'}} size='small' onClick={()=>setCurrentId(post._id)}>
@@ -48,7 +49,6 @@ const openPost=()=> history.push(`/posts/${post._id}`);
             <CardContent>
                 <Typography variant="body2" color="textSecondary" component="p">{post.message}</Typography>
             </CardContent>
-            </div>
             <CardActions className={classes.cardActions}>
                 <Button size='small' disabled={!user?.result} onClick={()=>{dispatch(likePost(post._id))}}>
                     <Likes /> 

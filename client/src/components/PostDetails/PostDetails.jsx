@@ -68,7 +68,6 @@ const PostDetails = () => {
               </div>
             ))}
           </div>
-
        </div>
       </Paper>
       
