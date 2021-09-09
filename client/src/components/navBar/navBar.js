@@ -33,8 +33,8 @@ const NavBar = () => {
         <AppBar className={classes.appBar} position="static">
             <Container className={classes.container}>
             <div className={classes.brandContainer}>
-                <Typography component={Link} to='/' className={classes.heading} align="center">OUR MEMORIES</Typography>
-                <img className={classes.image} src={memories} alt={memories} height="50" />
+                <Typography component={Link} to='/' className={classes.heading} align="center">OUR MEMORIES
+                <img className={classes.image} src={memories} alt={memories} height="50" /></Typography>
             </div>
             
             <Toolbar className={classes.toolBar}>

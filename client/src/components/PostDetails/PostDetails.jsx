@@ -22,8 +22,7 @@ const PostDetails = () => {
      if (post){
       dispatch(getPostsBySearch({search:'none',tags:post?.tags.join(',')}));
      }
-    
-   },[post]);
+    },[post]);
 
    if (!post) return null;
 

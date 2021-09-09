@@ -28,10 +28,10 @@ const Likes=()=>{
 const openPost=()=> history.push(`/posts/${post._id}`);
     return (
         <Card className={classes.card} raised elevation={6}>
-            <ButtonBase className={classes.cardAction} onClick={openPost}>
+            <div className={classes.cardAction} onClick={openPost}>
             <CardMedia className={classes.media} image={post.selectedFile} title={post.title} />
             <div className={classes.overlay}>
-                <Typography color='primary' variant="h5">{post.name}</Typography>
+                <Typography style={{color:'white'}} variant="h5">{post.name}</Typography>
                 <Typography style={{color:'red'}} variant="body2">{moment(post.createdAt).fromNow()}</Typography>
             </div>
             {(user?.result.googleId === post?.creator || user?.result._id === post?.creator) && (
@@ -48,7 +48,7 @@ const openPost=()=> history.push(`/posts/${post._id}`);
             <CardContent>
                 <Typography variant="body2" color="textSecondary" component="p">{post.message}</Typography>
             </CardContent>
-            </ButtonBase>
+            </div>
             <CardActions className={classes.cardActions}>
                 <Button size='small' disabled={!user?.result} onClick={()=>{dispatch(likePost(post._id))}}>
                     <Likes /> 
@@ -58,8 +58,6 @@ const openPost=()=> history.push(`/posts/${post._id}`);
                     <DeleteIcon fontSize='small' />Delete
                 </Button>
                 )}
-                
-
             </CardActions>
         </Card>
     );
