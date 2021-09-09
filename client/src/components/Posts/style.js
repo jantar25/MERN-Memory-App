@@ -5,6 +5,10 @@ export default makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
   },
+  noMemory:{
+ fontSize:'30px',
+ color:'#808080',
+  },
   smMargin: {
     margin: theme.spacing(1),
   },

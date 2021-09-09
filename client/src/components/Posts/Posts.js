@@ -9,7 +9,7 @@ const Posts = ({setCurrentId}) => {
     const {posts,isLoading}=useSelector((state)=>state.posts);
     const classes=useStyle();
    
-    if(!posts.length && !isLoading) return 'no posts';
+    if(!posts.length && !isLoading) return <div className={classes.noMemory} >No Memory</div>;
     return (isLoading ? <CircularProgress /> :(
             <Grid className={classes.container} container alignItems="stretch" spacing={3}>
                 {posts.map((post)=>(
