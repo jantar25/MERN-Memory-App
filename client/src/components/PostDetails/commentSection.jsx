@@ -1,6 +1,7 @@
 import React,{useState,useRef} from 'react'
 import {Typography,TextField,Button} from '@material-ui/core'
 import {useDispatch} from 'react-redux'
+import {commentPost} from '../../actions/posts'
 import useStyles from './styles'
 
 const commentSection=({post})=>{
@@ -8,9 +9,11 @@ const commentSection=({post})=>{
     const dispatch=useDispatch();
     const {comments,setComments}=useState();
     const {comment,setComment}=useState();
+    const user=JASON.parse(localStorage.getItem('user'));
 
     const handleClick=()=>{
-
+        const finalComment=`${user.result.name}:${comment}`;
+        dispatch(commentPost(finalComment,post._id));
     }
     console.log(post);
     return (
@@ -35,7 +38,9 @@ const commentSection=({post})=>{
                     valur={comment}
                     onChange={(e)=> setComment(e.target.value)}
                 />
-                <Button style={{marginTop:'10px'}} fullWidth disabled={!comment} variant='contained' onClick={handleClick}>
+                <Button style={{marginTop:'10px'}} fullWidth 
+                disabled={!comment} variant='contained' 
+                onClick={handleClick} colo='primary'>
                         Comment
                 </Button>
                 </div>
