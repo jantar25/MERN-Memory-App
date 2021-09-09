@@ -33,13 +33,14 @@ const PostDetails = () => {
             </Paper>
        )
    }
-   const recommendedPosts=posts.filter(({_id})=>_id===post._id);
+   const recommendedPosts=posts.filter(({_id})=>_id!==post._id);
+   const openPost=(_id)=>history.push(`/posts/${_id}`)
     return (
       <Paper style={{padding:'20px',borderRadius:'15px',background:'black'}} elevation={6}>
         <div className={classes.card}>
         <div className={classes.section}>
-          <Typography variant="h3" color="Primary"  component="h2">{post.title}</Typography>
-          <Typography gutterBottom variant="h6" color="Secondary" component="h2">{post.tags.map((tag) => `#${tag} `)}</Typography>
+          <Typography variant="h3" color="primary"  component="h2">{post.title}</Typography>
+          <Typography gutterBottom variant="h6" color="secondary" component="h2">{post.tags.map((tag) => `#${tag} `)}</Typography>
           <Typography gutterBottom variant="body1" component="p">{post.message}</Typography>
           <Typography variant="h6" style={{color:'blue'}}>Created by: {post.name}</Typography>
           <Typography variant="body1" style={{color:'red'}} >{moment(post.createdAt).fromNow()}</Typography>
@@ -55,12 +56,16 @@ const PostDetails = () => {
       </div>
      {recommendedPosts.lenght && (
        <div className={classes.section} >
-          <Typography gutterBottom variant="h5" >You Might also like:</Typography>
+          <Typography gutterBottom style={{color:'blue'}} variant="h5" >You Might also like:</Typography>
           <Divider />
           <div className={classes.recommendedPosts}>
             {recommendedPosts.map(({title,message,name,likes,selectedFiles,_id})=>(
-              <div>
-                {title}
+              <div style={{margin:'20px', cursor:'pointer',}} onClick={()=>openPost(_id)} key={_id}>
+                 <Typography gutterBottom variant="h6" >{title}</Typography>
+                 <Typography gutterBottom variant="h5" >{name}</Typography>
+                 <Typography gutterBottom variant="subtitle2" >{message}</Typography>
+                 <Typography gutterBottom variant="subtitle1" >Likes:{likes.lenght}</Typography>
+                 <img src={selectedFiles} width='200px' />
               </div>
             ))}
           </div>
