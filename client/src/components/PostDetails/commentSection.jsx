@@ -9,7 +9,7 @@ const CommentSection=({post})=>{
     const dispatch=useDispatch();
     const [comments,setComments]=useState([1,2,3,4]);
     const [comment,setComment]=useState();
-    const user=JSON.parse(localStorage.getItem('user'));
+    const user=JSON.parse(localStorage.getItem('profile'));
 
     const handleClick=()=>{
         const finalComment=`${user.result.name}:${comment}`;
