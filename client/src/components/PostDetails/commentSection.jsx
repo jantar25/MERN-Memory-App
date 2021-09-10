@@ -4,12 +4,12 @@ import {useDispatch} from 'react-redux'
 import {commentPost} from '../../actions/posts'
 import useStyles from './styles'
 
-const commentSection=({post})=>{
+const CommentSection=({post})=>{
     const classes=useStyles();
     const dispatch=useDispatch();
     const {comments,setComments}=useState();
     const {comment,setComment}=useState();
-    const user=JASON.parse(localStorage.getItem('user'));
+    const user=JSON.parse(localStorage.getItem('user'));
 
     const handleClick=()=>{
         const finalComment=`${user.result.name}:${comment}`;
@@ -49,4 +49,4 @@ const commentSection=({post})=>{
     )
 }
 
-export default commentSection;
+export default CommentSection;

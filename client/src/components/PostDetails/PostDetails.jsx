@@ -28,6 +28,8 @@ const PostDetails = () => {
 
    if (!post) return null;
 
+   const openPost=(_id)=>history.push(`/posts/${_id}`)
+
    if(isLoading){
        return (
             <Paper elevation={6} className={classes.loadingPaper}>
@@ -36,7 +38,8 @@ const PostDetails = () => {
        )
    }
    const recommendedPosts=posts.filter(({_id})=>_id!==post._id);
-   const openPost=(_id)=>history.push(`/posts/${_id}`)
+   
+
     return (
       <Paper style={{padding:'20px',borderRadius:'15px',background:'black'}} elevation={6}>
         <div className={classes.card}>
@@ -49,13 +52,14 @@ const PostDetails = () => {
           <Divider style={{ margin: '20px 0' }} />
           <Typography variant="body1"><strong>Realtime Chat - coming soon!</strong></Typography>
           <Divider style={{ margin: '20px 0' }} />
-          <commentSection />
+          <commentSection post={post} />
           <Divider style={{ margin: '20px 0' }} />
         </div>
         <div className={classes.imageSection}>
           <img className={classes.media} src={post.selectedFile || 'https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png'} alt={post.title} />
         </div>
       </div>
+  {!recommendedPosts.length && (
        <div className={classes.section} >
           <Typography gutterBottom style={{color:'white'}} variant="h5" >You Might also like:</Typography>
           <Divider />
@@ -71,6 +75,7 @@ const PostDetails = () => {
             ))}
           </div>
        </div>
+       )}
       </Paper>
       
     )

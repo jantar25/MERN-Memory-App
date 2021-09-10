@@ -9,6 +9,8 @@ import Input from './Input.js';
 import Icon from './icon.js';
 import {signin,signup} from '../../actions/auth'
 
+
+
 const initialState={firstName:'',lastName:'',email:'',password:'',confirmPassword:''}
 
 const Auth = () => {
