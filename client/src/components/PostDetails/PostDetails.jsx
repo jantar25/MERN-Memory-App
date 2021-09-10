@@ -37,8 +37,9 @@ const PostDetails = () => {
             </Paper>
        )
    }
-   const recommendedPosts=posts.filter(({_id})=>_id!==post._id);
-   
+  //  console.log(Object.values(posts));
+  //  const recommendedPosts=Object.values(posts).filter(({_id})=>_id===post._id);
+
 
     return (
       <Paper style={{padding:'20px',borderRadius:'15px',background:'black'}} elevation={6}>
@@ -59,7 +60,7 @@ const PostDetails = () => {
           <img className={classes.media} src={post.selectedFile || 'https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png'} alt={post.title} />
         </div>
       </div>
-  {!recommendedPosts.length && (
+  {/* {recommendedPosts.length && (
        <div className={classes.section} >
           <Typography gutterBottom style={{color:'white'}} variant="h5" >You Might also like:</Typography>
           <Divider />
@@ -75,7 +76,7 @@ const PostDetails = () => {
             ))}
           </div>
        </div>
-       )}
+       )} */}
       </Paper>
       
     )
