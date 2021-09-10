@@ -7,7 +7,7 @@ import {useParams,useHistory} from 'react-router-dom'
 import {getPost,getPostsBySearch} from '../../actions/posts'
 import useStyles from './styles'
 
-import commentSection from './commentSection'
+import CommentSection from './commentSection'
 
 const PostDetails = () => {
    const {post,posts,isLoading}=useSelector((state)=>state.posts);
@@ -42,7 +42,7 @@ const PostDetails = () => {
 
 
     return (
-      <Paper style={{padding:'20px',borderRadius:'15px',background:'black'}} elevation={6}>
+      <Paper style={{padding:'20px',borderRadius:'15px',background:'#000'}} elevation={6}>
         <div className={classes.card}>
         <div className={classes.section}>
           <Typography variant="h3" color="primary"  component="h2">{post.title}</Typography>
@@ -53,7 +53,7 @@ const PostDetails = () => {
           <Divider style={{ margin: '20px 0' }} />
           <Typography variant="body1"><strong>Realtime Chat - coming soon!</strong></Typography>
           <Divider style={{ margin: '20px 0' }} />
-          <commentSection post={post} />
+          <CommentSection post={post} />
           <Divider style={{ margin: '20px 0' }} />
         </div>
         <div className={classes.imageSection}>

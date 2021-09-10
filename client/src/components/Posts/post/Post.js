@@ -40,7 +40,7 @@ const openPost=(e)=> history.push(`/posts/${post._id}`);
                 <Typography style={{color:'white'}} variant="h5">{post.name}</Typography>
                 <Typography style={{color:'red'}} variant="body2">{moment(post.createdAt).fromNow()}</Typography>
             </div>
-            
+            </ButtonBase>
             {(user?.result.googleId === post?.creator || user?.result._id === post?.creator) && (
             <div className={classes.overlay2}>
                 <Button style={{color:'white'}} size='small' onClick={()=>setCurrentId(post._id)}>
@@ -48,6 +48,7 @@ const openPost=(e)=> history.push(`/posts/${post._id}`);
                 </Button>
             </div>
             )}
+            
             <div className={classes.details}>
                 <Typography variant="body2" color='textSecondary' component="h2">{post.tags.map((tag) => `#${tag} `)}</Typography>
             </div> 
@@ -55,7 +56,6 @@ const openPost=(e)=> history.push(`/posts/${post._id}`);
             <CardContent>
                 <Typography variant="body2" color="textSecondary" component="p">{post.message.split(' ').splice(0, 20).join(' ')}...</Typography>
             </CardContent>
-            </ButtonBase>
             <CardActions className={classes.cardActions}>
                 <Button size='small' disabled={!user?.result} onClick={()=>{dispatch(likePost(post._id))}}>
                     <Likes /> 
