@@ -1,59 +1,58 @@
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from "@material-ui/core/styles";
 
 export default makeStyles({
   media: {
     height: 0,
-    paddingTop: '56.25%',
-    backgroundBlendMode: 'darken',
+    paddingTop: "56.25%",
+    backgroundBlendMode: "darken",
   },
   border: {
-    border: 'solid',
+    border: "solid",
   },
   fullHeightCard: {
-    height: '100%',
+    height: "100%",
   },
   card: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'space-between',
-    borderRadius: '15px',
-    height: '100%',
-    position: 'relative',
-    backgroundColor: 'rgb(128,128,128)',
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
+    borderRadius: "15px",
+    height: "100%",
+    position: "relative",
+    backgroundColor: "rgb(128,128,128)",
   },
   overlay: {
-    position: 'absolute',
-    top: '50px',
-    left: '30px',
-    color:'rgb(255,255,255, 255)',
+    position: "absolute",
+    top: "50px",
+    left: "30px",
+    color: "rgb(255,255,255, 255)",
   },
   overlay2: {
-    position: 'absolute',
-    top: '200px',
-    right: '20px',
-    
+    position: "absolute",
+    top: "170px",
+    right: "20px",
   },
   grid: {
-    display: 'flex',
+    display: "flex",
   },
   details: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    margin: '10px',
+    display: "flex",
+    justifyContent: "space-between",
+    margin: "10px",
   },
   title: {
-    padding: '0 15px',
+    padding: "0 15px",
   },
-  message:{
-    padding:'10px',
+  message: {
+    padding: "10px",
   },
   cardActions: {
-    padding: '0 16px 8px 16px',
-    display: 'flex',
-    justifyContent: 'space-between',
+    padding: "0 16px 8px 16px",
+    display: "flex",
+    justifyContent: "space-between",
   },
   cardAction: {
-    display: 'block',
-    textAlign: 'initial',
+    display: "block",
+    textAlign: "initial",
   },
 });
