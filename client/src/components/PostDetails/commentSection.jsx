@@ -13,7 +13,7 @@ const CommentSection=({post})=>{
     const [comment,setComment]=useState('');
     const user=JSON.parse(localStorage.getItem('profile'));
     const commentsRef= useRef();
-    console.log(comments[1]);
+    
 
     const handleClick= async ()=>{
         const finalComment=`${user.result.name}:${comment}`;
