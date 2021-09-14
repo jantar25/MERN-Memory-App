@@ -37,8 +37,8 @@ const PostDetails = () => {
             </Paper>
        )
    }
-  //  console.log(Object.values(posts));
-  //  const recommendedPosts=Object.values(posts).filter(({_id})=>_id===post._id);
+console.log(Object.values(posts));
+const recommendedPosts=Object.values(posts).filter(({_id})=>_id!==post._id);
 
 
     return (
@@ -51,8 +51,6 @@ const PostDetails = () => {
           <Typography variant="h6" style={{color:'blue'}}>Created by: {post.name}</Typography>
           <Typography variant="body1" style={{color:'red'}} >{moment(post.createdAt).fromNow()}</Typography>
           <Divider style={{ margin: '20px 0' }} />
-          <Typography variant="body1"><strong>Realtime Chat - coming soon!</strong></Typography>
-          <Divider style={{ margin: '20px 0' }} />
           <CommentSection post={post} />
           <Divider style={{ margin: '20px 0' }} />
         </div>
@@ -60,7 +58,7 @@ const PostDetails = () => {
           <img className={classes.media} src={post.selectedFile || 'https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png'} alt={post.title} />
         </div>
       </div>
-  {/* {recommendedPosts.length && (
+  {recommendedPosts.length && (
        <div className={classes.section} >
           <Typography gutterBottom style={{color:'white'}} variant="h5" >You Might also like:</Typography>
           <Divider />
@@ -76,7 +74,7 @@ const PostDetails = () => {
             ))}
           </div>
        </div>
-       )} */}
+       )}
       </Paper>
       
     )
