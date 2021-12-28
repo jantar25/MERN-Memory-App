@@ -18,13 +18,13 @@ const PostDetails = () => {
 
    useEffect(()=>{
     dispatch(getPost(id));
-   },[id]);
+   },[id,dispatch]);
 
    useEffect(()=>{
      if (post){
       dispatch(getPostsBySearch({search:'none',tags:post?.tags.join(',')}));
      }
-    },[post]);
+    },[post,dispatch]);
 
    if (!post) return null;
 
@@ -69,7 +69,7 @@ const recommendedPosts=Object.values(posts).filter(({_id})=>_id!==post._id);
                  <Typography gutterBottom color="secondary" variant="h5" >{name}</Typography>
                  <Typography gutterBottom style={{color:'#808080'}} variant="subtitle2" >{message}</Typography>
                  <Typography gutterBottom style={{color:'#808080'}} variant="subtitle1" >Likes:{likes.length}</Typography>
-                 <img src={selectedFile} width='200px' />
+                 <img src={selectedFile} width='200px' alt={post.title}/>
               </div>
             ))}
           </div>
