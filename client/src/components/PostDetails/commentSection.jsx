@@ -30,7 +30,7 @@ const CommentSection=({post})=>{
                 <div className={classes.commentInnerContainer}>
                     <Typography gutterBottom variant="h6">Comments</Typography>
                     {comments?.map((c,i)=>(
-                        <Typography key={i} gutterBottom variant="subtitle1">
+                        <Typography key={i} gutterBottom variant="subtitle2">
                         {c}
                         </Typography>
                         
@@ -45,9 +45,9 @@ const CommentSection=({post})=>{
                          variant='outlined' label='Comment' multiline
                          value={comment} onChange={(e)=> setComment(e.target.value)}
                      />
-                     <Button style={{marginTop:'10px'}} fullWidth 
+                     <Button style={{marginTop:'10px',color:'#000',background:'#fff'}} fullWidth 
                      disabled={!comment} variant='contained' 
-                     onClick={handleClick} style={{color:'#000',background:'#404040'}}>
+                     onClick={handleClick}>
                              Comment
                      </Button>
                      </div>

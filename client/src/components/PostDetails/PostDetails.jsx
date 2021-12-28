@@ -37,13 +37,16 @@ const PostDetails = () => {
             </Paper>
        )
    }
-console.log(Object.values(posts));
+
 const recommendedPosts=Object.values(posts).filter(({_id})=>_id!==post._id);
 
 
     return (
       <Paper style={{padding:'20px',borderRadius:'15px',background:'#000'}} elevation={6}>
         <div className={classes.card}>
+        <div className={classes.imageSection}>
+          <img className={classes.media} src={post.selectedFile || 'https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png'} alt={post.title} />
+        </div>
         <div className={classes.section}>
           <Typography variant="h3" color="primary"  component="h2">{post.title}</Typography>
           <Typography gutterBottom variant="h6" color="secondary" component="h2">{post.tags.map((tag) => `#${tag} `)}</Typography>
@@ -53,9 +56,6 @@ const recommendedPosts=Object.values(posts).filter(({_id})=>_id!==post._id);
           <Divider style={{ margin: '20px 0' }} />
           <CommentSection post={post} />
           <Divider style={{ margin: '20px 0' }} />
-        </div>
-        <div className={classes.imageSection}>
-          <img className={classes.media} src={post.selectedFile || 'https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png'} alt={post.title} />
         </div>
       </div>
   {recommendedPosts.length && (

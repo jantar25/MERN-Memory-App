@@ -5,7 +5,7 @@ export default makeStyles((theme) => ({
   appBar: {
     borderBottomRightRadius: 30,
     borderTopLeftRadius:30,
-    margin: '30px 0',
+    margin: '10px 0px',
     padding: '10px 50px',
     background:'rgb(128,128,128)',
   },
@@ -76,7 +76,13 @@ export default makeStyles((theme) => ({
       display:'none',
     },
     profile: {
-      width: '200px', 
+      width: '150px', 
+    },
+    logout:{
+      padding:'10px',
+    },
+    signIn:{
+      padding:'10px',
     },
   },
 }));
